@@ -9,34 +9,113 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
+
     <nav class="navbar bg-light">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">Weather Dashborard</span>
         </div>
     </nav>
+
     <main>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <section>
+                            <label for="basic-url" class="form-label">Serch for a City Below</label>
+                            <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                        </section>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>City and Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="card" style="width: 18rem;">
+            <h3>Search History</h3>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Most Recent</li>
+              <li class="list-group-item">Second Most Recent</li>
+              <li class="list-group-item">Third Most Recent</li>
+            </ul>
+        </div>
 
-
-            <div class="card" style="width: 18rem">
-                <div class="card-body">
-                    <section>
-                        <label for="basic-url" class="form-label">Serch for a City Below</label>
-                        <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </section>
-                    <button type="button" class="btn btn-primary">Submit</button>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
                 </div>
               </div>
-              
-              <div class="card" style="width: 18rem;">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
+              <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+                </div>
               </div>
-
-
+              <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Date</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Temp</li>
+                            <li class="list-group-item">Wind</li>
+                            <li class="list-group-item">Humidity</li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
