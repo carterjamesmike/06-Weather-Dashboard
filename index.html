@@ -21,11 +21,11 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <section>
-                            <label for="basic-url" class="form-label">Serch for a City Below</label>
+                        <form id="city-form">
+                            <label class="form-label">Serch for a City Below</label>
                             <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="city-search" aria-describedby="basic-addon3">
-                        </section>
+                            <input type="text" class="form-input" id="city-search" aria-describedby="basic-addon3">
+                        </form>
                         <button type="button" id="submit-button" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
@@ -33,7 +33,8 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h2 id="city-name">City and Date</h2>
+                        <h2 id="city-name">City</h2>
+                        <h2 id="date-0">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-0" class="list-group-item">Temp</li>
                             <li id="current-wind-0"class="list-group-item">Wind</li>
@@ -57,7 +58,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Date</h2>
+                        <h2 id="date-1">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-1" class="list-group-item">Temp</li>
                             <li id="current-wind-1" class="list-group-item">Wind</li>
@@ -69,7 +70,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Date</h2>
+                        <h2 id="date-2">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-2" class="list-group-item">Temp</li>
                             <li id="current-wind-2" class="list-group-item">Wind</li>
@@ -81,7 +82,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Date</h2>
+                        <h2 id="date-3">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-3" class="list-group-item">Temp</li>
                             <li id="current-wind-3" class="list-group-item">Wind</li>
@@ -93,7 +94,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Date</h2>
+                        <h2 id="date-4">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-4" class="list-group-item">Temp</li>
                             <li id="current-wind-4" class="list-group-item">Wind</li>
@@ -105,7 +106,7 @@
               <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h2>Date</h2>
+                        <h2 id="date-5">Date</h2>
                         <ul class="list-group list-group-flush">
                             <li id="current-temp-5" class="list-group-item">Temp</li>
                             <li id="current-wind-5" class="list-group-item">Wind</li>
@@ -119,6 +120,8 @@
 
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="./assests/js/script.js"></script>
-</body>
+</bod
 </html>
+
