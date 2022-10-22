@@ -1,11 +1,12 @@
-var submitBtn = document.getElementById("submit-button");
-
+var submitBtn = document.getElementById('submit-button');
+var inputCity = document.getElementById('city-name');
 
 
 function getGeocode () {
-    var input = document.getElementById("city-search").value;
-    console.log(input);
-    var geocodeUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
+    var userInput = document.getElementById("city-search").value;
+    console.log(userInput);
+    var geocodeUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
+    inputCity.textContent = userInput;
     
     fetch(geocodeUrl)
         .then(function (response) {
@@ -16,7 +17,6 @@ function getGeocode () {
             var lon = data[0].lon;
             console.log(`This is the lat ${lat} and lon ${lon}`);
             getWeatherData(lat, lon);
-
         });
 }
 
@@ -40,6 +40,12 @@ function getWeatherData (lat, lon) {
                 console.log(data.list[i].main.temp);
                 console.log(data.list[i].wind.speed);
                 console.log(data.list[i].main.humidity);
+                var tempText = document.getElementById(`current-temp-${i}`);
+                tempText.textContent = `Temp: ${temp}`;
+                var windText = document.getElementById(`current-wind-${i}`);
+                windText.textContent = `Temp: ${wind}`;
+                var humidityText = document.getElementById(`current-humidity-${i}`);
+                humidityText.textContent = `Temp: ${humidity}`;
             }
         });
 
@@ -47,8 +53,17 @@ function getWeatherData (lat, lon) {
 
 
 submitBtn.addEventListener('click', getGeocode)
+//Needs
+    //Display weather data on page
+    //Search history
+        //Search history funcitonality
+    //Add eventListener to submit function
+    //Link momemnt for date functionality
+    //Minor styling
+    //Icons for weather
 
-//Display weather data on page
-//Save recent history
-//Add eventListener to submit function
-//Link momemnt for date functionality
+
+//Wants
+    //Capitlize inputCity
+    //Major styling
+
