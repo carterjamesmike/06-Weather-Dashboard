@@ -25,7 +25,7 @@ function getGeocode () {
         });
 }
 
-function getWeatherData (lat, lon) {
+function getWeatherData (lat, lon,) {
     // console.log(`getWeatherData fx lat: ${lat} and lon: ${lon}`);
     var forcastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=0cd8570e03d2182052245fb88b455b9c&units=imperial`;
     // console.log(forcastURL);
@@ -76,22 +76,52 @@ function renderHistory(userInput) {
         var recentSearch = searchArr[i];
         var li = document.createElement("li");
         var button = document.createElement("button");
+        button.setAttribute("id", searchArr[i])
 
    
         li.setAttribute("data-index", i);
-       
+      
         button.textContent = recentSearch;
         li.appendChild(button);
         searchHistory.appendChild(li);
         console.log(searchArr);
       }
+}
+
+
+searchHistory.addEventListener("click", function(event) {
+    var element = event.target;
+  
+
+    if (element.matches("button") === true) {
+        var btnAttribute= element.getAttribute('id');
+        // console.log(btnAttribute);
+        getSearchGeocode(btnAttribute);
+        
+
 
     }
+});
 
+function getSearchGeocode (btnAttribute) {
+    inputCity.textContent = btnAttribute;
 
+    var geocodeUrlHistory = `http://api.openweathermap.org/geo/1.0/direct?q=${btnAttribute}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
 
-function test () {
-    console.log("Success!"); 
+    fetch(geocodeUrlHistory)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            var lat = data[0].lat;
+            var lon = data[0].lon;
+            // console.log(`This is the lat ${lat} and lon ${lon}`);
+            getWeatherData(lat, lon);
+        });
+}
+
+function test (btnAttribute) {
+    console.log(`This is the id: ${btnAttribute}`);
 }
     
 submitBtn.addEventListener('click', getGeocode);
@@ -102,7 +132,7 @@ submitBtn.addEventListener('click', getGeocode);
 //Needs
                 //Display weather data on page
                 //Search history
-    //Search history funcitonality
+                //Search history funcitonality
     //Add eventListener to submit function
                 //Link momemnt for date functionality
     //Minor styling
