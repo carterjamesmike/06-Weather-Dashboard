@@ -1,12 +1,15 @@
 var submitBtn = document.getElementById('submit-button');
 var inputSubmit = document.getElementById('city-search');
 var inputCity = document.getElementById('city-name');
+var searchHistory = document.querySelector('#search-history');
+var searchArr = [];
 
 
 function getGeocode () {
     var userInput = document.getElementById('city-search').value;
+    renderHistory(userInput)
     var clearInput = document.getElementById('city-search');
-    console.log(userInput);
+    // console.log(userInput);
     var geocodeUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
     inputCity.textContent = userInput;
     clearInput.value = '';
@@ -36,16 +39,16 @@ function getWeatherData (lat, lon) {
             const displayDate = moment();
             for (var i =0; i < 6; i++) {
                 // console.log(data);
-                console.log(`Day ${i+1}`);
+                // console.log(`Day ${i+1}`);
                 var temp = data.list[i].main.temp;
                 var wind = data.list[i].wind.speed;
                 var humidity = data.list[i].main.humidity;
                 var icon = data.list[i].weather[0].icon;
-                console.log(`This is day ${i+1} temp: ${temp} and the wind: ${wind} and the humidity: ${humidity}`);
+                // console.log(`This is day ${i+1} temp: ${temp} and the wind: ${wind} and the humidity: ${humidity}`);
                 // console.log(data.list[i].main.temp);
                 // console.log(data.list[i].wind.speed);
                 // console.log(data.list[i].main.humidity);
-                console.log(icon);
+                // console.log(icon);
                 // console.log(icon.toString());
                 var tempText = document.getElementById(`current-temp-${i}`);
                 // tempText.textContent = `Temp: ${temp}`;
@@ -63,6 +66,28 @@ function getWeatherData (lat, lon) {
 
 }
 
+function renderHistory(userInput) {
+    searchHistory.innerHTML = "";
+    // console.log("Hello?");
+    // console.log(userInput);
+    searchArr.unshift(userInput);
+
+    for (var i = 0; i < searchArr.length; i++) {
+        var recentSearch = searchArr[i];
+        var li = document.createElement("li");
+        var button = document.createElement("button");
+
+   
+        li.setAttribute("data-index", i);
+       
+        button.textContent = recentSearch;
+        li.appendChild(button);
+        searchHistory.appendChild(li);
+        console.log(searchArr);
+      }
+
+    }
+
 
 
 function test () {
@@ -76,7 +101,7 @@ submitBtn.addEventListener('click', getGeocode);
 
 //Needs
                 //Display weather data on page
-    //Search history
+                //Search history
     //Search history funcitonality
     //Add eventListener to submit function
                 //Link momemnt for date functionality
