@@ -1,10 +1,6 @@
 var submitBtn = document.getElementById('submit-button');
 var inputSubmit = document.getElementById('city-search');
 var inputCity = document.getElementById('city-name');
-// const displayDate = moment().format('dddd MMM Do');
-// console.log(displayDate.toString());
-
-
 
 
 function getGeocode () {
@@ -53,25 +49,29 @@ function getWeatherData (lat, lon) {
                 // console.log(icon.toString());
                 var tempText = document.getElementById(`current-temp-${i}`);
                 // tempText.textContent = `Temp: ${temp}`;
-                tempText.textContent = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+                tempText.textContent = `Temp: ${temp}`;
                 var windText = document.getElementById(`current-wind-${i}`);
                 windText.textContent = `Wind: ${wind}`;
                 var humidityText = document.getElementById(`current-humidity-${i}`);
                 humidityText.textContent = `Humidity: ${humidity}`;
                 var futureDate = document.getElementById(`date-${i}`);
                 futureDate.textContent = displayDate.add(i/i, 'd').format('dddd MMM Do');
+                document.getElementById(`img-${i}`).innerHTML = '<img src=https://openweathermap.org/img/wn/' + icon + '@2x.png' + ' width=50, height=50>'; 
                 
             }
         });
 
 }
 
-// function test () {
-//     console.log('Success!')
-// }
 
+
+function test () {
+    console.log("Success!"); 
+}
+    
 submitBtn.addEventListener('click', getGeocode);
 // inputSubmit.addEventListener('submit', test);
+// submitBtn.addEventListener('click', test)
 
 
 //Needs
@@ -81,7 +81,7 @@ submitBtn.addEventListener('click', getGeocode);
     //Add eventListener to submit function
                 //Link momemnt for date functionality
     //Minor styling
-    //Icons for weather
+                //Icons for weather
 
 
 //Wants
