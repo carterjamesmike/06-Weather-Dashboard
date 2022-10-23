@@ -1,5 +1,5 @@
 var submitBtn = document.getElementById('submit-button');
-var inputSubmit = document.getElementById('city-search');
+var inputSubmit = document.getElementById('city-form');
 var inputCity = document.getElementById('city-name');
 var searchHistory = document.querySelector('#search-history');
 var searchArr = [];
@@ -120,12 +120,17 @@ function getSearchGeocode (btnAttribute) {
         });
 }
 
-function test (btnAttribute) {
-    console.log(`This is the id: ${btnAttribute}`);
-}
+// function test () {
+    
+//     console.log('success!');
+// }
     
 submitBtn.addEventListener('click', getGeocode);
 // inputSubmit.addEventListener('submit', test);
+inputSubmit.addEventListener('submit', function (event) {
+    event.preventDefault();
+    getGeocode();
+});
 // submitBtn.addEventListener('click', test)
 
 
