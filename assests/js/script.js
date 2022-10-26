@@ -94,7 +94,7 @@ searchHistory.addEventListener("click", function(event) {
 //Fetches lat and lon through geocoding api specifically for the user input history buttons and calls getWeatherData fx
 function getSearchGeocode (btnAttribute) {
     inputCity.textContent = btnAttribute;
-    var geocodeUrlHistory = `http://api.openweathermap.org/geo/1.0/direct?q=${btnAttribute}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
+    var geocodeUrlHistory = `https://api.openweathermap.org/geo/1.0/direct?q=${btnAttribute}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
 
     fetch(geocodeUrlHistory)
         .then(function (response) {
