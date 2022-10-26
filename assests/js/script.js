@@ -10,7 +10,7 @@ function getGeocode () {
     var userInput = document.getElementById('city-search').value;
     renderHistory(userInput)
     var clearInput = document.getElementById('city-search');
-    var geocodeUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
+    var geocodeUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=0cd8570e03d2182052245fb88b455b9c`;
     inputCity.textContent = userInput;
     clearInput.value = '';
     fetch(geocodeUrl)
