@@ -6,7 +6,7 @@ This is the sixth challange assignment for the UTA Full Stack Coding Bootcamp. T
 
 
 ## Access
--The deployed page can be accessed via: 
+-The deployed page can be accessed via: https://carterjamesmike.github.io/06-Weather-Dashboard/
 -The code can be accessed via: https://github.com/carterjamesmike/06-Weather-Dashboard
 
 ## Screenshot of applicaiton
