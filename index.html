@@ -9,16 +9,15 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-
-    <nav class="navbar bg-light">
+<!--Main Header-->
+    <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">Weather Dashborard</span>
         </div>
     </nav>
 
-
-
     <main>
+        <!--Search input-->
         <div class="row">
             <div class="col-sm-6">
                 <div class="card">
@@ -32,6 +31,7 @@
                     </div>
                 </div>
             </div>  
+            <!--Current Weather-->
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -47,11 +47,13 @@
                 </div>
             </div>  
         </div>
+        <!--Search History-->
         <div class="card" style="width: 18rem;">
             <h3>Search History</h3>
             <ul id="search-history" class="list-group list-group-flush"></ul>
         </div>
 
+        <!--Future Weather-->
         <div class="container">
             <div class="row">
               <div class="col">

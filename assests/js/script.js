@@ -19,12 +19,12 @@ function getGeocode () {
         })
         .then(function (data) {
             if (data.length === 0) {
-                console.log("No go, man");
-                inputCity.textContent = "City";
+                inputCity.textContent = searchArr[1];
+                while (searchHistory.firstChild) {
+                    searchHistory.removeChild(searchHistory.firstChild);
+                  }
                 searchArr.splice(0);
-                console.log(searchArr);
             } else { 
-            console.log(data);
             var lat = data[0].lat;
             var lon = data[0].lon;
             getWeatherData(lat, lon);
@@ -108,6 +108,7 @@ function getSearchGeocode (btnAttribute) {
         });
 }
 
+
 //Event listeners for form submit and submit button
 submitBtn.addEventListener('click', getGeocode);
 inputSubmit.addEventListener('submit', function (event) {
@@ -115,20 +116,4 @@ inputSubmit.addEventListener('submit', function (event) {
     getGeocode();
 });
 
-
-
-//Needs
-                //Display weather data on page
-                //Search history
-                //Search history funcitonality
-                //Add eventListener to submit function
-                //Link momemnt for date functionality
-    //Minor styling
-                //Icons for weather
-    //Error for undefined user input
-
-
-//Wants
-    //Capitlize inputCity
-    //Major styling
 
